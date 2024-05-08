@@ -1,0 +1,67 @@
+/* App.module.css */
+body {
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  background-color: rgb(32, 28, 28);
+  overflow: hidden;
+}
+img {
+  height: 6vh;
+  width: 7vh;
+  float: left;
+  margin: 0.5rem 0rem 1cqh 01rem;
+}
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  float: right;
+  margin:0.5rem 0rem 0.5rem 0rem;
+}
+
+.navlink {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* App.module.css */
+.emp{
+  margin-right: 50rem;
+}
+.butn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 0.4rem;
+  transition: outline 0.3s ease;
+}
+
+.butn:hover {
+  outline: 1px solid white;
+}
+.usr{
+  margin-top: 0.9rem;
+  margin-right: 2rem;
+  color: white;
+}
+.navlink:hover {
+  outline: 1px solid white;
+  
+}
+.logo{
+  float: left;
+  color: white;
+  margin-left: 0.4rem;
+  margin-top: 1.2rem;
+}
