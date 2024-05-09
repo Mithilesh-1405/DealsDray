@@ -5,9 +5,9 @@
   border-collapse: collapse;
 }
 .button {
-  background-color: transparent;
+  /* background-color: transparent; */
   border: 2px solid black;
-  color: black;
+  color:rgb(109, 72, 17);
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -19,7 +19,9 @@
 }
 
 .button:hover {
-  background-color: #f0f0f0; /* Light gray background on hover */
+  background-color: #703304dc; /* Light gray background on hover */
+  color: whitesmoke;
+  transition:ease-in-out;
 }
 
 .employeeTable th,

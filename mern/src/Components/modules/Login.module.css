@@ -7,13 +7,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 40rem;
   background-color: #f9f7f7;
 }
 
 .loginBox {
-  height: 60vh;
-  width: 70vh;
+  height: 25rem;
+  width: 35rem;
   background-color: #343a40;
   padding: 2rem;
   border-radius: 8px;
@@ -40,7 +40,7 @@ label {
   background-color: #fff;
   color: #333;
   font-size: 1rem;
-  margin-bottom: 3vh;
+  margin-bottom: 1rem;
   outline: none;
 }
 
@@ -63,10 +63,10 @@ label {
 .error {
   color: red;
   font-size:medium;
-  margin-bottom: 0.1vh;
+  margin-bottom: 0.1rem;
 }
 .erroruser{
-  margin-bottom:1vh ;
+  margin-bottom:0.5rem ;
 }
 h4 {
   font-size: small;
