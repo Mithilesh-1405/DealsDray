@@ -141,8 +141,6 @@ app.post('/createUsers', async (req, res) => {
 });
 
 
-
-
 app.listen(port, (err) => {
     console.log('server started on port: ' + port);
 });
