@@ -8,38 +8,38 @@
 
 .employeeForm {
   background-color: rgb(32, 28, 28);
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 
 .formGroup {
-  margin-bottom: 20px;
+  margin-bottom:0.5rem;
 }
 
 .formLabel {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 1rem;
   font-weight: bold;
   
 }
 .error {
   color: red;
   font-size:medium;
-  margin-bottom: 0.1vh;
+  margin-bottom: 0.1rem;
 }
 .formInput,
 .formSelect {
   width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.6rem;
   box-sizing: border-box;
 }
 
 .radioGroup label {
-  margin-right: 10px;
+  margin-right: 0.5rem;
   
 }
 .flexGroup {
@@ -53,21 +53,21 @@
 }
 
 .checkboxGroup label {
-  margin-right: 10px; /* Adjust spacing between checkboxes */
+  margin-right: 1rem; /* Adjust spacing between checkboxes */
 }
 
 .radioGroup {
-  margin-right: 10px; /* Adjust spacing between the label and radio buttons */
+  margin-right: 1rem; /* Adjust spacing between the label and radio buttons */
 }
 
 .button {
   background-color: transparent;
-  border: 2px solid #dfd1d1;
+  border: 0.1rem solid #dfd1d1;
   color: #f9f8f8;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 0.5rem;
+  font-size: 1rem;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }

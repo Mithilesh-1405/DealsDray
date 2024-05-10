@@ -57,16 +57,16 @@ app.delete('/deleteEmployee/:id', async (req, res) => {
 app.post('/verifyLogin', async (req, res) => {
     try {
         const { username, password } = req.body;
-        const user = await t_logins.find({ username });
+        const user = await t_logins.findOne({username});
         console.log(user)
         if (!user) {
-            return res.status(401).json({ error: 'Incorrect username or password' });
+            return res.status(404).json({ error:"No such User exists, Please register" });
         }
         if (user.password !== password) {
             return res.status(401).json({ error: 'Incorrect username or password' });
         }
         // If username and password are valid, send success response
-        res.json({ success: true });
+        res.status(200).json({ success: true });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -139,10 +139,6 @@ app.post('/createUsers', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
-app.get('/', async (req, res) => {
-    res.send("HEllo")
-})
 
 
 app.listen(port, (err) => {

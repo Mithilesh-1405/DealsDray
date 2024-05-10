@@ -1,37 +1,46 @@
-import React, { useState } from 'react';
-import styles from './modules/Login.module.css';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState } from "react";
+import styles from "./modules/Login.module.css";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const Login = ({ setUsername, setPassword, username, password, setIsLoggedIn }) => {
+const Login = ({
+  setUsername,
+  setPassword,
+  username,
+  password,
+  setIsLoggedIn,
+}) => {
   const navigate = useNavigate();
-
-
-  const [errors, setErrors] = useState({});
-
+  const [errors, setErrors] = useState("");
   const handleLogin = (e, username, password) => {
-
     setIsLoggedIn(true);
     setUsername(username);
-    localStorage.setItem('username', username);
-    navigate('/')
-
+    localStorage.setItem("username", username);
+    navigate("/");
   };
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const validationErrors = validateFields();
     if (Object.keys(validationErrors).length === 0) {
       // handleLogin(e, username, password);
-      axios.post("http://localhost:5000/verifyLogin").then((response) => {
-        if (response.status === 200) {
-          // console.log("OKAy");
-          handleLogin(e, username, password)
-        }
-        // console.log(response.data.status);
-      }).catch((error) => {
-        console.error("Error fetching users:", error);
-      });
+      axios
+        .post("http://localhost:5000/verifyLogin", {
+          username,
+          password,
+        })
+        .then((response) => {
+          if (response.status === 200) {
+            // console.log("OKAy");
+            handleLogin(e, username, password);
+            setUsername('')
+            setPassword('')
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching users:", error);
+          setErrors(error)
+        });
     } else {
       setErrors(validationErrors);
     }
@@ -42,14 +51,14 @@ const Login = ({ setUsername, setPassword, username, password, setIsLoggedIn }) 
 
     // Username validation
     if (!username.trim()) {
-      errors.username = 'Username is required';
+      errors.username = "Username is required";
     }
 
     // Password validation
     if (!password.trim()) {
-      errors.password = 'Password is required';
+      errors.password = "Password is required";
     } else if (password.length < 6) {
-      errors.password = 'Password must be at least 6 characters long';
+      errors.password = "Password must be at least 6 characters long";
     }
 
     return errors;
@@ -68,20 +77,24 @@ const Login = ({ setUsername, setPassword, username, password, setIsLoggedIn }) 
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               className={styles.input}
-              placeholder='Enter your username'
+              placeholder="Enter your username"
             />
-            {errors.username && <p className={styles.error}>{errors.username}</p>}
+            {errors.username && (
+              <p className={styles.error}>{errors.username}</p>
+            )}
           </div>
           <div className={styles.inputContainer}>
             <input
               type="password"
               id="password"
               value={password}
-              placeholder='Enter your password'
+              placeholder="Enter your password"
               onChange={(e) => setPassword(e.target.value)}
               className={styles.input}
             />
-            {errors.password && <p className={styles.error}>{errors.password}</p>}
+            {errors.password && (
+              <p className={styles.error}>{errors.password}</p>
+            )}
           </div>
           <button type="submit" className={styles.button}>
             Login
@@ -89,8 +102,11 @@ const Login = ({ setUsername, setPassword, username, password, setIsLoggedIn }) 
         </form>
         <div>
           <h3>Don't Have an account? </h3>
-          <Link className='links' to="/signin">Signin</Link>
+          <Link className="links" to="/signin">
+            Signin
+          </Link>
         </div>
+        
       </div>
     </div>
   );
